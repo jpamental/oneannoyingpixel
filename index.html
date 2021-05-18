@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>One Annoying Pixel, just for Jon</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+		<meta property="og:title" content="One Annoying Pixel">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/scripts.js"></script>
+    <script type="text/javascript">
+				var lightSetting = false;
+				for (let i = 0; i < cookies.length; i++) {
+
+					// Check for Light Mode preference
+					if (cookies[i].indexOf('lightMode=dark') !== -1) {
+						// set a cookie to save the setting
+						document.cookie = "lightMode=dark;max-age=31536000;path=/;samesite=strict";
+						document.documentElement.className += " dark";
+						lightSetting = true;
+					} else if (cookies[i].indexOf('lightMode=light') !== -1) {
+						document.cookie = "lightMode=light;max-age=31536000;path=/;samesite=strict";
+						document.documentElement.className += " light";
+						lightSetting = true;
+					} 
+
+				} // end for
+
+				if (lightSetting == false) {
+					document.cookie = "lightMode=auto;max-age=31536000;path=/;samesite=strict";
+				}
+
+
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="hgroup">
+        <h1>“There’s always <strong>one annoying pixel</strong> that I just obsess over”</h1>
+        <h2>— Jon Setzen, Future of Web Design London, 2014</h2>
+        <h3>It’s here, Jon... somewhere.</h3>
+      </div>
+    </main>
+    <div id="the_pixel" class="the-pixel"><span class="the-pixel--pointer">‹</span> the pixel</div>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+
+/* Fraunces Variable */
+@font-face {
+  font-family: 'Fraunces Variable';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('../fonts/fraunces/Fraunces-Roman-VF.woff2') format('woff2 supports variations'),
+       url('../fonts/fraunces/Fraunces-Roman-VF.woff2') format('woff2-variations');
+  /* 
+  opsz: 9 144; (144)
+  SOFT: 0 100; (100)
+  WONK: 0 1; (1)
+  */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fraunces Variable';
+  font-style: italic;
+  font-weight: 100 900;
+  src: url('../fonts/fraunces/Fraunces-Italic-VF.woff2') format('woff2 supports variations'),
+       url('../fonts/fraunces/Fraunces-Italic-VF.woff2') format('woff2-variations');
+  /* 
+  opsz: 9 144; (144)
+  SOFT: 0 100; (100)
+  WONK: 0 1; (1)
+  */
+  font-display: swap;
+}
+
+/* Variables */
+:root {
+  --px-top: 0;
+  --px-left: 0;
+
+  --bg-color: #ffffff;
+  --fg-color: #003366;
+
+  --h1-SOFT: 100;
+  --h1-WONK: 1;
+
+  --h2-SOFT: calc(var(--h1-SOFT) * 0.7);
+  --h2-WONK: calc(var(--h1-WONK) * 0.7);
+
+  --h3-SOFT: 1;
+  --h3-WONK: 0;
+
+  /* Light mode */
+  --osLightMode: light;
+}
+@media (prefers-color-scheme:dark) {
+  :root {
+    --osLightMode: dark;
+  }
+}
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* Layout */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  margin: 0;
+  padding: 0;
+  font-family: "Fraunces Variable";
+  position: relative;
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Fraunces Variable";
+  font-size: clamp(2.25rem, calc(4vw + 1rem), 4rem);
+  font-variation-settings: 'WONK' var(--h1-WONK), 'SOFT' var(--h1-SOFT);
+  font-weight: 650;
+  text-indent: -0.5em;
+}
+
+h1 strong {
+  font-weight: 990;
+}
+
+h2 {
+  font-family: "Fraunces Variable";
+  font-size: clamp(1.75rem, calc(2.5vw + 1rem), 2rem);
+  font-variation-settings: 'WONK' var(--h2-WONK), 'SOFT' var(--h2-SOFT);
+  font-weight: 600;
+}
+
+h3 {
+  font-family: "Fraunces Variable";
+  font-size: clamp(1.25rem, calc(2vw + 1rem), 1.5rem);
+  font-variation-settings: 'opsz' 12, 'WONK' var(--h3-WONK), 'SOFT' var(--h3-SOFT);
+  font-weight: 550;
+  text-align: center;
+}
+
+.hgroup {
+  align-self: center;
+  max-width: min(50rem, 85vw);
+}
+
+/* HTML Elements */
+
+
+/* Components */
+
+.the-pixel {
+  position: absolute;
+  top: 0;
+  top: var(--px-top);
+  left: 0;
+  left: var(--px-left);
+  z-index: 5;
+}
+
+.the-pixel--pointer {
+  display: inline-block;
+  margin-right: -0.5em;
+  padding-left: 0.5em;
+  transform-origin: top right;
+  transform: rotate(45deg);
+}
+
+.the-pixel:before {
+  background-color: rgba(0,0,0,0.5);
+  content: " ";
+  display: block;
+  float: left;
+  height: 1px;
+  margin-right: 0.25em;
+  width: 1px;
+}
+
+
+@media (prefers-color-scheme:dark) {
+
+  :root {
+    --bg-color: #04192e;
+    --fg-color: #ffffff;
+  
+  }
+  .the-pixel:before {
+    background-color: rgba(255,255,255,0.5);
+  }
+  
+}
