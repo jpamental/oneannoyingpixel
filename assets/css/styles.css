@@ -82,7 +82,7 @@ main {
 
 h1 {
   font-family: "Fraunces Variable";
-  font-size: clamp(2.25rem, calc(4vw + 1rem), 4rem);
+  font-size: clamp(2.125rem, calc(4vw + 1rem), 4rem);
   font-variation-settings: 'WONK' var(--h1-WONK), 'SOFT' var(--h1-SOFT);
   font-weight: 650;
   text-indent: -0.5em;
