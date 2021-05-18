@@ -102,6 +102,7 @@ h2 {
 h3 {
   font-family: "Fraunces Variable";
   font-size: clamp(1.25rem, calc(2vw + 1rem), 1.5rem);
+  font-style: italic;
   font-variation-settings: 'opsz' 12, 'WONK' var(--h3-WONK), 'SOFT' var(--h3-SOFT);
   font-weight: 550;
   text-align: center;
@@ -123,7 +124,12 @@ h3 {
   top: var(--px-top);
   left: 0;
   left: var(--px-left);
+  text-indent: -999em;
   z-index: 5;
+}
+
+.the-pixel:focus {
+  text-indent: unset;
 }
 
 .the-pixel--pointer {
