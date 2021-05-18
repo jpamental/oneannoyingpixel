@@ -94,7 +94,7 @@ h1 strong {
 
 h2 {
   font-family: "Fraunces Variable";
-  font-size: clamp(1.75rem, calc(2.5vw + 1rem), 2rem);
+  font-size: clamp(1.65rem, calc(2.5vw + 1rem), 2rem);
   font-variation-settings: 'WONK' var(--h2-WONK), 'SOFT' var(--h2-SOFT);
   font-weight: 600;
 }
