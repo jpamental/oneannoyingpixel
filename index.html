@@ -13,8 +13,13 @@
     <link rel="manifest" href="assets/images/favicons/site.webmanifest">
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/fontfaceobserver.js"></script>
     <script type="text/javascript">
-				var lightSetting = false;
+				const cookies = document.cookie.split(';');
+        var lightSetting = false;
+
+  			document.documentElement.className += " wf-inactive";
+
 				for (let i = 0; i < cookies.length; i++) {
 
 					// Check for Light Mode preference
@@ -35,6 +40,39 @@
 					document.cookie = "lightMode=auto;max-age=31536000;path=/;samesite=strict";
 				}
 
+        // set initial var for support of variable fonts
+        // starting with true since most browsers support them now
+        var vfSupport = true;
+        
+        // Check for browser support of variable fonts
+        var vfSupport = "CSS" in window && "supports" in CSS && CSS.supports("(font-variation-settings: normal)");
+        // should return true if the browser supports variable fonts
+				//console.log('vfSupport: '+vfSupport);
+        
+  			// Optimization for Repeat Views
+  			if( sessionStorage.foutFontsLoaded ) {
+  				document.documentElement.classList.remove("wf-inactive");
+  				document.documentElement.classList.add("wf-active");
+  			}
+        
+        if( vfSupport == true ) { // Check for variable fonts 
+					var fontA = new FontFaceObserver('Fraunces Variable', {
+						weight: 400,
+						style: 'normal'
+					});
+					var fontB = new FontFaceObserver('Fraunces Variable', {
+							weight: 400,
+							style: 'italic'
+						});
+			
+					Promise.all([fontA.load(), fontB.load()]).then(function () {
+            document.documentElement.classList.remove("wf-inactive");
+            document.documentElement.classList.add("wf-active");
+          
+    				// Optimization for Repeat Views
+    				sessionStorage.foutFontsLoaded = true;
+  				});
+  		  };
 
     </script>
   </head>

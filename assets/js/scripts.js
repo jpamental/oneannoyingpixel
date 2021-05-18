@@ -15,7 +15,7 @@ function pixelSet() {
   let newPixelPositionLeftValue = Math.floor(Math.random() * 100);
 
   let newPixelPositionTop = newPixelPositionTopValue + 'vh';
-  let newPixelPositionLeft = newPixelPositionLeftValue + 'vh';
+  let newPixelPositionLeft = newPixelPositionLeftValue + 'vw';
 
   document.documentElement.style.setProperty(`--px-top`, newPixelPositionTop);
   document.documentElement.style.setProperty(`--px-left`, newPixelPositionLeft);

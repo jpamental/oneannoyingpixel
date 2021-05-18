@@ -70,7 +70,7 @@ body {
   color: var(--fg-color);
   margin: 0;
   padding: 0;
-  font-family: "Fraunces Variable";
+  font-family: "Fraunces Variable", Georgia, 'Times New Roman', Times, serif;
   position: relative;
 }
 
@@ -81,11 +81,16 @@ main {
 }
 
 h1 {
-  font-family: "Fraunces Variable";
+  font-family: "Fraunces Variable", Georgia, 'Times New Roman', Times, serif;
   font-size: clamp(2.125rem, calc(4vw + 1rem), 4rem);
   font-variation-settings: 'WONK' var(--h1-WONK), 'SOFT' var(--h1-SOFT);
   font-weight: 650;
   text-indent: -0.5em;
+}
+
+.wf-inactive h1 {
+  font-size: clamp(2.1rem, calc(3.5vw + 1rem), 3.6rem);
+  letter-spacing: -1px;
 }
 
 h1 strong {
@@ -93,14 +98,19 @@ h1 strong {
 }
 
 h2 {
-  font-family: "Fraunces Variable";
+  font-family: "Fraunces Variable", Georgia, 'Times New Roman', Times, serif;
   font-size: clamp(1.65rem, calc(2.5vw + 1rem), 2rem);
   font-variation-settings: 'WONK' var(--h2-WONK), 'SOFT' var(--h2-SOFT);
   font-weight: 600;
 }
 
+.wf-inactive h2 {
+  font-size: clamp(1.6rem, calc(2.5vw + 1rem), 1.9rem);
+  letter-spacing: -1px;
+}
+
 h3 {
-  font-family: "Fraunces Variable";
+  font-family: "Fraunces Variable", Georgia, 'Times New Roman', Times, serif;
   font-size: clamp(1.25rem, calc(2vw + 1rem), 1.5rem);
   font-style: italic;
   font-variation-settings: 'opsz' 12, 'WONK' var(--h3-WONK), 'SOFT' var(--h3-SOFT);
