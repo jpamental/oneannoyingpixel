@@ -1,2 +1,2 @@
-# oneannoyingpixel
-You remember that time that Jon Setzen talked about there always being one annoying pixel in a design he was directing in a talk at Future of Web Design years ago? I do :)
+# One Annoying Pixel
+You remember that time that Jon Setzen talked about how there would always be that one annoying pixel in a design that he would totally obsess over? It was in a talk at Future of Web Design a bunch of years ago. I do :)
