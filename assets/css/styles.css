@@ -172,6 +172,7 @@ a:active {
   left: var(--px-left);
   text-indent: -999em;
   z-index: 5;
+  transition: all 0.2s ease-in;
 }
 
 .the-pixel:focus {
@@ -187,6 +188,19 @@ a:active {
   transform: rotate(45deg);
 }
 
+.the-pixel.label-reverse:focus {
+  text-indent: -10em;
+}
+
+.label-reverse .the-pixel--pointer {
+  display: inline-block;
+  margin-right: -0.5em;
+  padding-left: 0.5em;
+  transform-origin: top right;
+  transform: rotate(-45deg);
+}
+
+/* The actual pixel */
 .the-pixel:before {
   background-color: rgba(0,0,0,0.5);
   content: " ";

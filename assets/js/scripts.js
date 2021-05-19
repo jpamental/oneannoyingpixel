@@ -6,6 +6,21 @@ window.onresize = function(){
 	//pixelSet();
 }
 
+var pixel_finder = document.getElementById('pixelfinder');
+var focus_track = 0;
+
+pixel_finder.addEventListener('click', function(e) {
+	e.preventDefault();
+  let pixel = document.getElementById('the_pixel');
+	if (focus_track == 1) {
+    pixel.blur();
+    focus_track = 0;
+  } else {
+    pixel.focus();
+    focus_track = 1;
+  }
+});
+
 function pixelSet() {
 
   let pixelPositionTop = getComputedStyle(document.documentElement).getPropertyValue('--px-top');
