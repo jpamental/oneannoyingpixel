@@ -176,6 +176,7 @@ a:active {
 
 .the-pixel:focus {
   text-indent: unset;
+  outline: 0;
 }
 
 .the-pixel--pointer {
